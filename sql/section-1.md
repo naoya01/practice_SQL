@@ -1,4 +1,8 @@
 # SQL文の基礎
+データベース mydb<br>
+テーブル users<br>
+カラム id, first_name, last_name
+
 
 **使用するデータベースを選択する**<br>
 use データベース名
@@ -17,3 +21,12 @@ select * form users;(スペルミス)
 
 「/**/」
 /* select * form users; */
+
+## 複数の列を取得
+例1)select id, last_name form users;
+
+例2)select
+  id,
+  last_name
+from
+  users;
