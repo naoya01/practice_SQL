@@ -14,7 +14,10 @@ selsct * from テーブル名;
 select * form users;(スペルミス)
 ｓｅｌｅｃｔ * form users;(全角文字)
 
-
+## エラーしない(大文字、小文字は同じ扱い)
+SELECT * FROM USERS;
+SELECT * form users;
+SElect * form users;
 ## コメントアウトの種類
 「--」
 -- select * form users;
