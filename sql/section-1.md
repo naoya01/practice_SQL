@@ -1,10 +1,10 @@
 # SQL文の基礎
 データベース mydb<br>
 - テーブル users
-  カラム id, first_name, last_name
+  - カラム id, first_name, last_name
 
-- テーブル products<br>
-  カラム id, price
+- テーブル products
+  - カラム id, price
 
 **使用するデータベースを選択する**<br>
 use データベース名
