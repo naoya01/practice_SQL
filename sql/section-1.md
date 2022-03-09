@@ -4,7 +4,7 @@
   - カラム id, first_name, last_name
 
 - テーブル products
-  - カラム id, price
+  - カラム id, name, price
 
 **使用するデータベースを選択する**<br>
 use データベース名
@@ -35,3 +35,11 @@ SElect * form users;
   last_name
 from
   users;
+
+## 列の値に対して演算を行う
+select 
+  name as 名前,
+  price as 価格,
+  price * 1.08 as 税込み価格
+from
+  products;
