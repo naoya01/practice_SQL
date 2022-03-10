@@ -65,24 +65,45 @@ from
   - 「like」パターンマッチング(曖昧検索)
   - 「between」値が値の範囲内に含まれているかどうか
 
-#### 例1)idが1の行を取得
+#### 例1)　idが1の行を取得
 select * from products where id = 1;
 
-#### 例2)名前が「商品0003」の行を取得
+#### 例2)　名前が「商品0003」の行を取得
 select * from products where name = "商品0003";
 
-#### 例3)priceが1000より大きい行を取得
+#### 例3)　priceが1000より大きい行を取得
 select * from products where price > 1000;
 
-#### 例4)priceが1000より小さい行を取得
+#### 例4)　priceが1000より小さい行を取得
 select * from products where price < 1000;
 
-#### 例5)priceが1000でない行を取得
+#### 例5)　priceが1000でない行を取得
 select * from products where price != 1000;<br>
 (select * from products where price <> 1000;)
 
-#### 例6)idが1か2か3の行を取得
+#### 例6)　idが1か2か3の行を取得
 select * from products where id in(1,2,3);
 
-#### 例7)idが1か2か3でない行を取得
+#### 例7)　idが1か2か3でない行を取得
 select * from products where id not in(1,2,3);
+
+#### 例8)　priceがnullではない行を取得
+select * from products where price is not null;
+
+#### 例9)　priceがnullの行を取得
+select * from products where price is null;
+
+#### 例10)　priceが1000から1900の行を取得
+select * from products where price between 1000 and 1900;<br>
+(select * from products where price >=1000 and price >=1900;)
+#### 例10)　価格が1000円または2000円の行を取得
+select * from products where price = 1000 or price = 2000;
+
+## パターンマッチングによる絞り込み
+### ワイルドカード文字について
+  '%'(パーセント)：0文字以上の任意の文字列
+  '_'(アンダースコア)：任意の1文字
+  1. '中%'→’中’で始まる文字列
+  1. '%中%'→’中’を含む文字列
+  1. '%中'→’中’で終わる文字列
+  1. '__子'→何かしらの2文字から始まり’子’で終わる文字列
