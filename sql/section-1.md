@@ -43,3 +43,10 @@ select
   price * 1.08 as 税込み価格
 from
   products;
+
+  ## 条件を指定して値を取得
+  select 列1, 列2... from テーブル名 where 条件;
+
+  ## 条件を指定して値を取得
+  例)値段が9000円以上の商品だけを取得
+  select name, price from products where price >= 9000;
