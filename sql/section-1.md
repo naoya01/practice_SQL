@@ -65,10 +65,10 @@ from
   - 「like」パターンマッチング(曖昧検索)
   - 「between」値が値の範囲内に含まれているかどうか
 
-例1)idが1の行を取得
+#### 例1)idが1の行を取得
 select * from products where id = 1;
 
-例2)名前が「商品0003」の行を取得
+#### 例2)名前が「商品0003」の行を取得
 select * from products where name = "商品0003";
 
 例3)priceが1000より大きい行を取得
