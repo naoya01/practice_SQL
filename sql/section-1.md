@@ -107,3 +107,27 @@ select * from products where price = 1000 or price = 2000;
   1. '%中%'→’中’を含む文字列
   1. '%中'→’中’で終わる文字列
   1. '__子'→何かしらの2文字から始まり’子’で終わる文字列
+<br>
+select * from users where last_name like '中%';<br>
+select * from users where last_name like '%中%';<br>
+select * from users where first_name like '%子';<br>
+select * from users where first_name like '__子';
+
+### 取得件数の制限
+
+select 列, ... from テーブル名 limit[オフセット,]最大取得件数;
+
+#### 10件のみ取得
+select * from products limit 10;
+
+#### 0から取得開始し10件のみ取得
+select * from products limit 0,10;
+
+#### 「中」から始まるものの0番目から取得を開始し100件のみ取得
+select * from users where last_name like '中%' limit 0,100;
+
+
+### limit句
+  select 列名 from テーブル名 where 列名 = 条件 limit = 件数;
+
+select id , last_name from users where gender = 1 limit 10;
