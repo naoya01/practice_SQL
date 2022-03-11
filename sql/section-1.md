@@ -1,7 +1,7 @@
 # SQL文の基礎
 データベース mydb<br>
 - テーブル users
-  - カラム id, first_name, last_name
+  - カラム id, first_name, last_name, gender, birthday, prefecture_id
 
 - テーブル products
   - カラム id, name, price
