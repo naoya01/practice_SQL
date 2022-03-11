@@ -9,6 +9,8 @@
 - テーブル orders
   - カラム id, user_id, amount, order_time
 
+- テーブル access_log
+  - カラム id, user_id, request_path, request_time, request_mouth
 ## sum 集約関数(合計)
 ### 2017年1月の合計値を求める
 select sum(amount) from orders where order_time >= '2017-01-01 00:00:00' and order_time <= '2017-02-01 00:00:00';
@@ -28,3 +30,15 @@ select max(price) from products;
   10, null, 20 の場合<br>
   => 平均値avg()は15となる<br>
   計算式：(10 + 20) / 2
+
+## count 集約関数(対象の行数を数える)
+select count(*) from users;
+select count(*) from users where gender = 2;
+
+
+select 
+	count(distinct user_id) 
+from 
+	access_logs 
+where 
+	request_month = '2017-01-01';
