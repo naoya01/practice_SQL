@@ -35,10 +35,67 @@ select max(price) from products;
 select count(*) from users;
 select count(*) from users where gender = 2;
 
-
+## count(distinct expr) 集約関数(ある数を重複を排除した数を数える)
 select 
 	count(distinct user_id) 
 from 
 	access_logs 
 where 
 	request_month = '2017-01-01';
+
+  ## group by 集約関数(グループ単位で集計する)
+  ### 都道府県別のユーザーの数を集計
+  select prefecture_id,count(*) from users group by prefecture_id;
+
+  ### 期間ごとに集計する
+  select 
+      request_month,
+      count(distinct user_id)
+  from 
+      access_logs 
+  where 
+      request_month >= '2017-01-01' and request_month <= '2018-01-01' 
+  group by
+    request_month;
+
+  ### 期間ごとに集計し、さらに絞り込む
+  select 
+    列1,...
+  from 
+    テーブル名
+  where 
+    条件式 
+  group by
+    列1,...
+  having
+    条件式;<br><br>
+
+  select 
+      request_month,
+      count(distinct user_id)
+  from 
+      access_logs 
+  where 
+      request_month >= '2017-01-01' and request_month <= '2018-01-01' 
+  group by
+    request_month
+  having 
+    count(distinct user_id) >= 630;
+
+  ### 記述順序
+  1. select：取得行(カラム)の指定
+  1. from：対象テーブルの指定
+  1. where：絞り込み条件の指定
+  1. group by：グループ化の条件を指定
+  1. having：グループ化した後に絞り込み条件の指定
+  1. order by：並び替え条件を指定
+  1. limit：取得する行すうを制限
+
+    ### 実行順序
+  1. from：対象テーブルの指定
+  1. where：絞り込み条件の指定
+  1. group by：グループ化の条件を指定
+  1. having：グループ化した後に絞り込み条件の指定
+  1. select：取得行(カラム)の指定
+  1. order by：並び替え条件を指定
+  1. limit：取得する行すうを制限
