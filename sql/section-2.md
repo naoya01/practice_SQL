@@ -70,7 +70,7 @@ where
   having
     条件式;<br><br>
 
-  select 
+  select
       request_month,
       count(distinct user_id)
   from 
@@ -91,7 +91,7 @@ where
   1. order by：並び替え条件を指定
   1. limit：取得する行すうを制限
 
-    ### 実行順序
+  ### 記述順序
   1. from：対象テーブルの指定
   1. where：絞り込み条件の指定
   1. group by：グループ化の条件を指定
