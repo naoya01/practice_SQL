@@ -66,6 +66,8 @@ round(対象の数値,丸めの桁数)<br>
 丸めの桁数に0を指定すると、少数第1位で四捨五入　round(10.555,2)<br>
 =>10.56<br><br>
 
+少数第1位で四捨五入<br>
 select id,name,round(price * 1.08,0) from products;<br><br>
 
+少数第1位で四捨五入<br>
 select id,name,round(price * 1.08,1) from products;<br><br>
