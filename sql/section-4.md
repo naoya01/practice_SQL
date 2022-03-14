@@ -55,4 +55,17 @@ select abs(-10);<br>
 select abs(0);<br>
 =>0
 
-## round
+## round関数(四捨五入)
+round(対象の数値,丸めの桁数)<br>
+丸めの桁数に0を指定すると、少数第1位で四捨五入　round(10.555,0)<br>
+=>11<br><br>
+
+丸めの桁数に0を指定すると、少数第1位で四捨五入　round(10.555,1)<br>
+=>10.6<br><br>
+
+丸めの桁数に0を指定すると、少数第1位で四捨五入　round(10.555,2)<br>
+=>10.56<br><br>
+
+select id,name,round(price * 1.08,0) from products;<br><br>
+
+select id,name,round(price * 1.08,1) from products;<br><br>
