@@ -71,3 +71,8 @@ select id,name,round(price * 1.08,0) from products;<br><br>
 
 少数第1位で四捨五入<br>
 select id,name,round(price * 1.08,1) from products;<br><br>
+
+## 文字列演算
+concat(文字列1,文字列2,文字列3,)<br>
+
+select concat(last_name,'',first_name,'さん') from users;
