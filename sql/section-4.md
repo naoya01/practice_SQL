@@ -79,3 +79,15 @@ select concat(last_name,'',first_name,'さん') from users;
 
 ### メルマガ用のリスト作成
 select concat(last_name,'さん'), email from users where gender = 2;
+
+## 日付の計算
+### 主な日付と時刻の関数や演算子
+- 現在の日付：current_date
+- 現在の時刻：current_timestamp
+- n日後の日付：d + n
+- n日前の日付：d - n
+- x時間後の時刻：interval 'x hour'
+- x時間前の時刻：- interval 'x hour'
+- extract：日付や時刻の特定の部分(年や月)までを取り出す
+
+
