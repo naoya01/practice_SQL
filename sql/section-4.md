@@ -76,3 +76,6 @@ select id,name,round(price * 1.08,1) from products;<br><br>
 concat(文字列1,文字列2,文字列3,)<br>
 
 select concat(last_name,'',first_name,'さん') from users;
+
+### メルマガ用のリスト作成
+select concat(last_name,'さん'), email from users where gender = 2;
