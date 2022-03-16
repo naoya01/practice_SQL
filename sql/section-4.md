@@ -89,9 +89,23 @@ select concat(last_name,'さん'), email from users where gender = 2;
   - select current_timestamp();<br>
     => 2022-03-16 10:46:08
 - n日後の日付：d + n
+  - select current_date() + 3;<br>
+  => 20220319
 - n日前の日付：d - n
+  - select current_date() - 3;<br>
+  => 20220313
 - x時間後の時刻：interval 'x hour'
+  - select current_time() + interval 6 hour;<br>
+  => 16:52:02
 - x時間前の時刻：- interval 'x hour'
+  - select current_time() - interval 6 hour;<br>
+  => 04:52:54
 - extract：日付や時刻の特定の部分(年や月)までを取り出す
+  - ordersテーブルから注文日時(order_timeカラム)が、2017年01月のレコードを取得する
+    - select * from orders where extract(year_month from order_time) = 201701;
 
+  - ordersテーブルから注文日時(order_timeカラム)が、2017年のレコードを取得する
+      - select * from orders where extract(year from order_time) = 2017;
 
+  - ordersテーブルから注文日時(order_timeカラム)が、1月のレコードを取得する
+        - select * from orders where extract(month from order_time) = 1;
