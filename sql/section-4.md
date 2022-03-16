@@ -83,10 +83,11 @@ select concat(last_name,'さん'), email from users where gender = 2;
 ## 日付の計算
 ### 主な日付と時刻の関数や演算子
 - 現在の日付：current_date
-  - select current_date();
+  - select current_date();<br>
+  => 2022-03-16
 - 現在の時刻：current_timestamp
   - select current_timestamp();<br>
-    2022-03-16 10:46:08
+    => 2022-03-16 10:46:08
 - n日後の日付：d + n
 - n日前の日付：d - n
 - x時間後の時刻：interval 'x hour'
