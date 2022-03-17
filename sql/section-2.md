@@ -17,14 +17,17 @@ select sum(amount) from orders where order_time >= '2017-01-01 00:00:00' and ord
 
 ## avg 集約関数(平均)
 ### 2017年1月の平均値を求める
+```SQL
 select avg(price) from products;
-
+```
 ## min 集約関数(最小値)
+```SQL
 select min(price) from products;
-
+```
 ## max 集約関数(最大値)
+```SQL
 select max(price) from products;
-
+```
 ## nullの扱いについて
   基本的に集約関数いおいては無視される<br>
   10, null, 20 の場合<br>
@@ -32,22 +35,26 @@ select max(price) from products;
   計算式：(10 + 20) / 2
 
 ## count 集約関数(対象の行数を数える)
+```SQL
 select count(*) from users;
 select count(*) from users where gender = 2;
-
+```
 ## count(distinct expr) 集約関数(ある数を重複を排除した数を数える)
+```SQL
 select 
 	count(distinct user_id) 
 from 
 	access_logs 
 where 
 	request_month = '2017-01-01';
-
+```
   ## group by 集約関数(グループ単位で集計する)
   ### 都道府県別のユーザーの数を集計
+```SQL
   select prefecture_id,count(*) from users group by prefecture_id;
-
+```
   ### 期間ごとに集計する
+```SQL
   select 
       request_month,
       count(distinct user_id)
@@ -57,6 +64,7 @@ where
       request_month >= '2017-01-01' and request_month <= '2018-01-01' 
   group by
     request_month;
+```
 
   ### 期間ごとに集計し、さらに絞り込む
   select 
@@ -69,7 +77,7 @@ where
     列1,...
   having
     条件式;<br><br>
-
+```SQL
   select
       request_month,
       count(distinct user_id)
@@ -81,7 +89,7 @@ where
     request_month
   having 
     count(distinct user_id) >= 630;
-
+```
   ### 記述順序
   1. select：取得行(カラム)の指定
   1. from：対象テーブルの指定
