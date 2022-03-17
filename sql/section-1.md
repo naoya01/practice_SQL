@@ -113,7 +113,7 @@ select * from products where price is null;
 select * from products where price between 1000 and 1900;
 ```
 ```SQL
-(select * from products where price >=1000 and price >=1900;)
+select * from products where price >=1000 and price >=1900;
 ```
 #### 例10)　価格が1000円または2000円の行を取得
 ```SQL
@@ -129,11 +129,12 @@ select * from products where price = 1000 or price = 2000;
   1. '%中'→’中’で終わる文字列
   1. '__子'→何かしらの2文字から始まり’子’で終わる文字列
 <br>
-select * from users where last_name like '中%';<br>
-select * from users where last_name like '%中%';<br>
-select * from users where first_name like '%子';<br>
+```SQL
+select * from users where last_name like '中%';
+select * from users where last_name like '%中%';
+select * from users where first_name like '%子';
 select * from users where first_name like '__子';
-
+```
 ### 取得件数の制限
 
 select 列, ... from テーブル名 limit[オフセット,]最大取得件数;
