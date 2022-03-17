@@ -98,16 +98,23 @@ select concat(last_name,'さん'), email from users where gender = 2;
   - select current_time() + interval 6 hour;<br>
   => 16:52:02
 - x時間前の時刻：- interval 'x hour'
+```SQL
   - select current_time() - interval 6 hour;<br>
+```
   => 04:52:54
 - extract：日付や時刻の特定の部分(年や月)までを取り出す
-  - ordersテーブルから注文日時(order_timeカラム)が、2017年01月のレコードを取得する
-    - select * from orders where extract(year_month from order_time) = 201701;
-
+  - ordersテーブルから注文日時
+  ```SQL
+  (order_timeカラム)が、2017年01月のレコードを取得する
+  ```
+  ```SQL
+     select * from orders where extract(year_month from order_time) = 201701;
+  ```
   - ordersテーブルから注文日時(order_timeカラム)が、2017年のレコードを取得する
+  ```SQL
       - select * from orders where extract(year from order_time) = 2017;
-
+  ```
   - ordersテーブルから注文日時(order_timeカラム)が、1月のレコードを取得する
-```SQL
-select * from orders where extract(month from order_time) = 1;
-```
+  ```SQL
+  select * from orders where extract(month from order_time) = 1;
+  ```
