@@ -12,47 +12,73 @@
 - テーブル access_log
   - カラム id, user_id, request_path, request_time, request_mouth
 ### 足し算
-  select 10 + 3;<br>
+  ```SQL
+  select 10 + 3;
+  ```
 =>13
 ### 引き算
-  select 10 - 3;<br>
+  ```SQL
+  select 10 - 3;
+  ```
 =>7
 ### 掛け算
-  select 10 * 3;<br>
+  ```SQL
+  select 10 * 3;
+  ```
 =>30
 ### 割り算
-  select 10 / 3;<br>
+  ```SQL
+  select 10 / 3;
+  ```
 =>3.333
 ### 余り
-  select 10 % 3;<br>
+  ```SQL
+  select 10 % 3;
+  ```
 =>1
 ## nullを含む計算の注意点
 
 ### 足し算
-  select 10 + null;<br>
+  ```SQL
+  select 10 + null;
+  ```
 =>null
 ### 引き算
-  select 10 - null;<br>
+  ```SQL
+  select 10 - null;
+  ```
 =>null
 ### 掛け算
-  select 10 * null;<br>
+  ```SQL
+  select 10 * null;
+  ```
 =>null
 ### 割り算
-  select 10 / null;<br>
+  ```SQL
+  select 10 / null;
+  ```
 =>null
 ### 余り
-  select 10 % null;<br>
+  ```SQL
+  select 10 % null;
+  ```
 =>null
 
 ## 絶対値
 ### 10の絶対値
-select abs(10);<br>
+```SQL
+select abs(10);
+```
 =>10
 ### 10の絶対値
-select abs(-10);<br>
+```SQL
+select abs(-10);
+```
 =>10
 ### 10の絶対値
-select abs(0);<br>
+```SQL
+select abs(0);
+```
 =>0
 
 ## round関数(四捨五入)
@@ -73,29 +99,40 @@ select id,name,round(price * 1.08,0) from products;<br><br>
 select id,name,round(price * 1.08,1) from products;<br><br>
 
 ## 文字列演算
-concat(文字列1,文字列2,文字列3,)<br>
-
+concat(文字列1,文字列2,文字列3,)
+```SQL
 select concat(last_name,'',first_name,'さん') from users;
-
+```
 ### メルマガ用のリスト作成
+```SQL
 select concat(last_name,'さん'), email from users where gender = 2;
-
+```
 ## 日付の計算
 ### 主な日付と時刻の関数や演算子
 - 現在の日付：current_date
-  - select current_date();<br>
+  ```SQL
+  select current_date();
+  ```
   => 2022-03-16
 - 現在の時刻：current_timestamp
-  - select current_timestamp();<br>
+  ```SQL
+  select current_timestamp();
+  ```
     => 2022-03-16 10:46:08
 - n日後の日付：d + n
-  - select current_date() + 3;<br>
+  ```SQL
+  select current_date() + 3;
+  ```
   => 20220319
 - n日前の日付：d - n
-  - select current_date() - 3;<br>
+  ```SQL
+  - select current_date() - 3;
+  ```
   => 20220313
 - x時間後の時刻：interval 'x hour'
-  - select current_time() + interval 6 hour;<br>
+  ```SQL
+  - select current_time() + interval 6 hour;
+  ```
   => 16:52:02
 - x時間前の時刻：- interval 'x hour'
 ```SQL
