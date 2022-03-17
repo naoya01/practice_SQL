@@ -15,12 +15,17 @@
  order by 列名や式　並び順,..
 
 ## 商品が高い順
+集約関数
+```SQL
  select * from products order by price desc;
-
+```
 ## 商品が高い順
+```SQL
 select * from products order by price asc;
-
+```
 ## 複数のデータの並び替え
-select * from products order by price desc,id asc ;<br>
+```SQL
+select * from products order by price desc,id asc ;
 
 select * from users order by birthday asc, prefecture_id asc;
+```
