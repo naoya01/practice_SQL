@@ -104,9 +104,7 @@ select concat(last_name,'さん'), email from users where gender = 2;
   => 04:52:54
 - extract：日付や時刻の特定の部分(年や月)までを取り出す
   - ordersテーブルから注文日時
-  ```SQL
   (order_timeカラム)が、2017年01月のレコードを取得する
-  ```
   ```SQL
      select * from orders where extract(year_month from order_time) = 201701;
   ```
