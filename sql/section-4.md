@@ -108,4 +108,6 @@ select concat(last_name,'さん'), email from users where gender = 2;
       - select * from orders where extract(year from order_time) = 2017;
 
   - ordersテーブルから注文日時(order_timeカラム)が、1月のレコードを取得する
-        - select * from orders where extract(month from order_time) = 1;
+```SQL:SELECT文のサンプル
+select * from orders where extract(month from order_time) = 1;
+```

@@ -11,3 +11,7 @@
 
 - テーブル access_log
   - カラム id, user_id, request_path, request_time, request_mouth
+
+  ## テーブルの正規化
+    テーブルを分けて情報の重複をなくしていく作業<br>
+
