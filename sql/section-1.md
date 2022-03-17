@@ -128,7 +128,7 @@ select * from products where price = 1000 or price = 2000;
   1. '%中%'→’中’を含む文字列
   1. '%中'→’中’で終わる文字列
   1. '__子'→何かしらの2文字から始まり’子’で終わる文字列
-<br>
+
 ```SQL
 select * from users where last_name like '中%';
 select * from users where last_name like '%中%';
