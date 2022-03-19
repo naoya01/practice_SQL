@@ -48,3 +48,16 @@
       テーブル名2
     on テーブル名1.列名 = テーブル名2.列名;
     ```
+
+    ``` SQL
+    select
+      users.id,
+      users.last_name,
+      users.first_name,
+      prefectures.name
+    from
+      users
+    inner join
+      prefectures
+    on users.prefecture_id = prefectures.id;
+    ```
