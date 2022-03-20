@@ -61,3 +61,31 @@
       prefectures
     on users.prefecture_id = prefectures.id;
     ```
+
+  ## inner join + where
+    ``` SQL
+    select
+      テーブル名1,列名,
+      テーブル名2,列名...
+    from
+      テーブル名1
+    inner join
+      テーブル名2
+    on テーブル名1.列名 = テーブル名2.列名
+    where
+      絞り込み条件;
+    ```
+
+        ``` SQL
+    select
+      users.id,
+      users.last_name,
+      users.first_name,
+      prefectures.name
+    from
+      users
+    inner join
+      prefectures
+    on users.prefecture_id = prefectures.id
+    where users.gender = 2;
+    ```
