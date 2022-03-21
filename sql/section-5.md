@@ -76,7 +76,7 @@
       絞り込み条件;
     ```
 
-        ``` SQL
+    ``` SQL
     select
       users.id,
       users.last_name,
