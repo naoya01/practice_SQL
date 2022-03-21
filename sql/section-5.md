@@ -89,3 +89,14 @@
     on users.prefecture_id = prefectures.id
     where users.gender = 2;
     ```
+
+    ## 記述順序
+
+    1. select 取得行(カラム)の指定
+    1. from 対象テーブルの指定
+    1. 結合処理
+    1. where 絞り込み条件の指定
+    1. group by グループ化の条件を指定
+    1. having グループ化した後の絞り込み条件を指定
+    1. order by 並び替え条件を指定
+    1. LIMIT 取得する行数の制限
