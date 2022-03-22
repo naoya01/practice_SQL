@@ -114,7 +114,7 @@
       users
     on orders.user_id = users.id
     where
-		users.prefecture_id = 13
-        and orders.order_time >= '2017-01-01 00:00:00'
-		and orders.order_time < '2017-02-01 00:00:00'
+		  users.prefecture_id = 13
+      and orders.order_time >= '2017-01-01 00:00:00'
+		  and orders.order_time < '2017-02-01 00:00:00'
   ```
