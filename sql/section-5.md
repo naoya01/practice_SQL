@@ -100,3 +100,21 @@
     1. having グループ化した後の絞り込み条件を指定
     1. order by 並び替え条件を指定
     1. LIMIT 取得する行数の制限
+
+  ```SQL
+    select 
+	 orders.id,
+     orders.order_time,
+     orders.amount,
+     users.id,
+     users.last_name,
+     users.first_name
+    from orders
+    inner join
+      users
+    on orders.user_id = users.id
+    where
+		users.prefecture_id = 13
+        and orders.order_time >= '2017-01-01 00:00:00'
+		and orders.order_time < '2017-02-01 00:00:00'
+  ```
