@@ -135,3 +135,15 @@
       テーブル名2
     on テーブル名1.列名 = テーブル名2.列名;
     ```
+    ``` SQL
+    select
+      p.id,
+      p.name,
+      sum(od.product_qty) num
+    from
+      products p
+    left outer join
+      order_details od
+    on p.id = od.product_id
+    group by p.id;
+    ```
