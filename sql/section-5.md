@@ -147,3 +147,53 @@
     on p.id = od.product_id
     group by p.id;
     ```
+
+    ## 多対多の関係を含む結合
+    ``` SQL
+      select
+        *
+      from
+        products P
+      inner join products_categories pc
+        on p.id = pc.product_id
+	    inner join categories c
+		    on pc.category_id = c.id
+      where
+        p.id = 3;
+    ```
+
+    ## テーブルの足し算
+    ``` SQL
+      select
+        *
+      from
+        products P
+      inner join products_categories pc
+        on p.id = pc.product_id
+	    inner join categories c
+		    on pc.category_id = c.id
+      where
+        p.id = 3;
+    ```
+
+    select 列1, ... from テーブル1
+    union select 列2, ... from テーブル2 <br>
+    ベースとなるselectの結果に、unionの後に記載したselectの結果を足し算する。
+        ## テーブルの足し算
+    ``` SQL
+      select
+        email,
+        last_name,
+        first_name,
+        gender
+      from
+        users
+      union    
+      select
+        email,
+          last_name,
+          first_name,
+          gender
+      from
+        admin_users;
+    ```
