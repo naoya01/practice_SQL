@@ -27,3 +27,10 @@
     from
       prefecutr_user_counts;
   ```
+
+  ### ビューの定義で、order by 句は使えない
+
+  ## ビューの削除
+  ```SQL
+    drop view prefecutr_user_counts;
+  ```
