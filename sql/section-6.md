@@ -34,3 +34,37 @@
   ```SQL
     drop view prefecutr_user_counts;
   ```
+
+  ## サブクエリ
+  ```SQL
+    select 
+      id,
+        last_name,
+        first_name
+    from
+      users
+    where id not in(    
+    select 
+      user_id
+    from
+      orders
+    where
+      order_time >= '2017-12-01 00:00:00'
+        and order_time < '2018-12-01 00:00:00')
+  ```
+
+
+  ```SQL
+    select
+      *
+    from
+      products
+    where
+      price > (
+    select 
+      avg(price)
+    from
+      products)
+    order by
+      price desc, id asc;
+  ```
