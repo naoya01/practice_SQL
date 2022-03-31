@@ -1,6 +1,8 @@
 # 条件によって値を変更する（分岐）
+
 構文<br>
-``` SQL
+
+```SQL
   case
     when 条件式1 then 値1 　・・・条件式1がtrueならば値１
     [when 条件式2 then 値2]　・・・条件式2がtrueならば値2
@@ -9,7 +11,7 @@
   []は省略可
 ```
 
-``` SQL
+```SQL
   select
     u.id as user_id,
       count(*) as num,
@@ -27,8 +29,9 @@
   order by user_lank asc;
 ```
 
-## 取得値nullを0に置き換える
-``` SQL
+## 取得値 null を 0 に置き換える
+
+```SQL
   select
     p.id,
       p.name,
